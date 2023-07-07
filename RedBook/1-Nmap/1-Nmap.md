@@ -23,12 +23,17 @@ Nmap, short for "Network Mapper," is a powerful and popular open-source network 
 ```
 nmap -p- --min-rate 10000 10.10.11.153 -Pn -v
 ```
+```
+nmap -sC -sV -v -Pn --reason IP
+```
+
+```
+nmap -sC -sV -v -Pn --reason IP
+```
+
 
 UDP scan
 ```
 sudo nmap 10.129.2.28 -F -sU
 ```
 
-```
-nmap -sC -sV -v -Pn --reason IP
-```
