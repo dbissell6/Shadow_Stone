@@ -28,7 +28,8 @@ nmap -sC -sV -v -Pn --reason IP
 ```
 
 ```
-nmap -sC -sV -v -Pn --reason IP
+nmap -p- -v -sC -sV --open --min-rate=1000 10.10.11.142
+
 ```
 
 
