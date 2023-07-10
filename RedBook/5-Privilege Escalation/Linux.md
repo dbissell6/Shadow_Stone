@@ -33,7 +33,10 @@ instead of netstat can use
 ```
 ss -tunap
 ```
-
+instead of ifconfig can use
+```
+ip addr show
+```
 ## Cred hunt
 
 ```
@@ -64,10 +67,23 @@ Scripts
 for l in $(echo ".py .pyc .pl .go .jar .c .sh");do echo -e "\nFile extension: " $l; find / -name *$l 2>/dev/null | grep -v "doc\|lib\|headers\|share";done
 ```
 
+## Process Search
+
+`ps -aux`
+
+### pspy
+
+![Pasted image 20220805171804](https://github.com/dbissell6/Shadow_Stone/assets/50979196/9638108c-31f4-4ed4-a0c1-e66e175ce77c)
 
 
+## Network Search
 
 
+![Pasted image 20230508091856](https://github.com/dbissell6/Shadow_Stone/assets/50979196/c1df3135-2b96-4029-ade8-dd00dd96ccad)
 
+
+<img width="756" alt="Screen Shot 2022-08-27 at 10 46 47 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/bb5b641e-d558-4f28-ba34-fdb7841cad96">
+
+`1..1024 | % {echo ((new-object Net.Sockets.TcpClient).Connect("10.129.25.115",$_)) "Port $_ is open!"} 2>$null`
 
 
