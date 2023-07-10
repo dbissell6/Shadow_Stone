@@ -37,3 +37,5 @@ UDP scan
 sudo nmap 10.129.2.28 -F -sU
 ```
 
+## Nmap without nmap
+<img width="192" alt="Pasted image 20220807171657" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/2eec3cdf-6795-439f-b68f-62f72a656d0a">
