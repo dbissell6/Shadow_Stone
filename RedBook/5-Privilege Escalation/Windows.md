@@ -1,4 +1,4 @@
-# Windows
+# Windows Priv Esc
 
 ## Credential hunting code chunks
 
@@ -57,4 +57,11 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "Disab
 
 https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
 
+
+## Process search
+powershell code
+```
+Get-NetTCPConnection | Select-Object -Property *,@{'Name' = 'ProcessName';'Expression'={(Get-Process -Id $_.OwningProcess).Name}}
+```
+<img width="569" alt="Screen Shot 2022-08-05 at 5 23 55 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/9db828d4-b9dd-4a77-a096-56761e7380b9">
 
