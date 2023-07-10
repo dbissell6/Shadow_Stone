@@ -18,6 +18,12 @@ dir secret.doc /s /p
 where /R C:\ waldo.txt
 ```
 
+### Inveigh
+
+![Pasted image 20230508074627](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2ee76561-6c3a-4941-a859-0212c76bd8aa)
+
+![Pasted image 20230508074732](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e51ce110-da44-4b04-aa14-5183bb46827f)
+
 ## AV 
 Get status of AV
 
