@@ -21,6 +21,8 @@ The easiest way to run it.
 
 1) intercept request in burp.
 2) right click 'copy to file'
+3) Here file named tosql
+
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/d5e0080f-9148-467e-b731-d2a09289684b)
 
 ### Enumerate user, db
