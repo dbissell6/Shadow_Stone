@@ -18,8 +18,22 @@ dir secret.doc /s /p
 where /R C:\ waldo.txt
 ```
 
-### Inveigh
+### Snaffler 
+Snaffler is a tool that can help us acquire credentials or other sensitive data in an Active Directory environment. 
 
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/96179d5a-2b09-4149-8540-927ba2e13e9c)
+
+
+### Bloodhound
+
+To Run bloodhound. Upload and run sharphound to the victim.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/00c27b7f-51ca-49bd-9ec2-db1c5c8887b2)
+
+Download zipfile to attack machine
+
+### Inveigh
+Like responder.
 ![Pasted image 20230508074627](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2ee76561-6c3a-4941-a859-0212c76bd8aa)
 
 ![Pasted image 20230508074732](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e51ce110-da44-4b04-aa14-5183bb46827f)
