@@ -27,4 +27,6 @@ sudo ldapsearch -H LDAP://10.10.10.161 -x -b "DC=HTB,DC=LOCAL" '(objectClass=Per
 ```
 ./windapsearch-linux-amd64 -d MEGABANK.LOCAL 10.10.10.169 -m users | awk '/userPrincipalName:/ {print $2}'
 ```
-
+```
+awk -F'@' '{print $1}' usernames > names
+```
