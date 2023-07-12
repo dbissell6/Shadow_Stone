@@ -24,3 +24,7 @@ sudo ldapsearch -H LDAP://10.10.10.161 -x -b "DC=HTB,DC=LOCAL" '(objectClass=Per
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/aacc8738-78b2-48fc-a472-d7c4c95731af)
 
+```
+./windapsearch-linux-amd64 -d MEGABANK.LOCAL 10.10.10.169 -m users | awk '/userPrincipalName:/ {print $2}'
+```
+
