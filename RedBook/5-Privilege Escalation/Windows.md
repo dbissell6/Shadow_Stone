@@ -30,7 +30,18 @@ To Run bloodhound. Upload and run sharphound to the victim.
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/00c27b7f-51ca-49bd-9ec2-db1c5c8887b2)
 
-Download zipfile to attack machine
+Download zipfile to attack machine. Start neo4j.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8f08ccad-6198-4250-b2fd-baacef6d37b4)
+
+Start Bloodhound. Login
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/373b653d-01df-4491-942b-98dad01b9f2a)
+
+On right side of screen, upload data, select zip file.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5b2b0c34-e3d0-47bd-9417-93f34e58df93)
+
 
 ### Inveigh
 Like responder.
