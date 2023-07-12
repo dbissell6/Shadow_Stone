@@ -25,6 +25,9 @@ hydra -l admin -P rockyou.txt -f 178.35.49.134 -s 32901 http-post-form "/login.p
 
 ![Pasted image 20220805223125](https://github.com/dbissell6/Shadow_Stone/assets/50979196/07107201-2407-44ba-8e22-95d1f5a0f9ca)
 
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/665cab1d-ed45-478b-8caa-9c8ef85f0ba6)
+
+
 ### rpcclient to password spray
 ![Pasted image 20230508093804](https://github.com/dbissell6/Shadow_Stone/assets/50979196/404d14eb-881b-48d0-8fec-7fc0147330fb)
 
