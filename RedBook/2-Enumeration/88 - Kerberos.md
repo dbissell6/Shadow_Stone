@@ -12,6 +12,7 @@ Kerberos is a network authentication protocol designed to provide secure authent
 * Kerberos Trust Relationships: Kerberos utilizes trust relationships between realms to facilitate authentication across different domains or realms. Penetration testers analyze the trust relationships in place, including cross-realm authentication and trust configurations, to identify potential security weaknesses or misconfigurations that could lead to unauthorized access or privilege escalation.
 
 ## Kerbrute
+Enumerate users
 ![Pasted image 20220805223245](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7f96a3d6-f76a-47b5-8f80-51d4ba3b50e5)
 
 
