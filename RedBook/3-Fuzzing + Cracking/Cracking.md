@@ -42,6 +42,17 @@ for u in $(cat usernames.txt);do rpcclient -U "$u%Welcome1" -c "getusername;quit
 ## Offline
 Remember, if trying to crack a hash of something from a windows system, even if the cracking fails you might still be able to Pass The Hash.
 
+### hashcat example hashes
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/41352270-138e-4883-9a67-6c67197c3b95)
+
+
+### hashcat bruteforce length 8 digits+uppercase
+
+```
+hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u
+```
+
 ### zip password
 ![Pasted image 20220805161528](https://github.com/dbissell6/Shadow_Stone/assets/50979196/eeed6c7b-2722-4d0c-aa1b-82c38390554a)
 
