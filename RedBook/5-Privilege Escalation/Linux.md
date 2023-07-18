@@ -26,6 +26,18 @@ Check which commands user can run as root
 
 <img width="363" alt="Pasted image 20220805224254" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/94cf4baa-8b2b-4165-8ea5-ebdca741320b">
 
+
+### Example
+
+The specific entry in the sudoers file allows the user to run /bin/ncdu with any user identity except root.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b9ae096b-82ea-4986-80d7-87f07d6ca4ec)
+
+In this example ncdu allows the user to spawn a shell.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/d995ce9f-9726-4a5c-b83c-2c09ba81b55e)
+
+
 ## Enumerate system
 
 ### Check OS and Version
