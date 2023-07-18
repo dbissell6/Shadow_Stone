@@ -148,6 +148,18 @@ Linux capabilities are a valuable security feature in the Linux operating system
 
 Despite their benefits, Linux capabilities are not without vulnerabilities. For instance, improperly granting capabilities to processes that lack sufficient sandboxing or isolation can lead to privilege escalation, providing unauthorized access to sensitive information and unauthorized actions.
 
+### Find caps
+```
+find /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec getcap {} \;
+```
+
+cap_dac_override example
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1ff85c76-1ca6-494a-b346-6ef54ffec779)
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e2c95f9a-8a2f-4320-ab2d-19e061508ec5)
 
 
 ## Network Search
@@ -166,4 +178,10 @@ arp -a
 
 `1..1024 | % {echo ((new-object Net.Sockets.TcpClient).Connect("10.129.25.115",$_)) "Port $_ is open!"} 2>$null`
 
+## Linpeas
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1d905cd4-cd79-4c26-9735-09ae03ec6b55)
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/4b51fd55-ab29-4b2b-a230-916894ff51d9)
 
