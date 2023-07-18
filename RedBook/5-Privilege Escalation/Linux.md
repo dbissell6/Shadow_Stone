@@ -185,3 +185,10 @@ arp -a
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/4b51fd55-ab29-4b2b-a230-916894ff51d9)
 
+## Recent Exploit examples
+
+### cve-2021-4034
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2effd935-52ff-4625-b15b-f3ad4a438c4d)
+
+
