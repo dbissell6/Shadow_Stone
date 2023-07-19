@@ -205,7 +205,12 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 ### pypykatz to extract creds
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/73175859-68c8-4c57-b017-179492da0fdb)
 
-## PTH from inside windows
+
+## Moving between Users
+
+
+
+### PTH from inside windows
 
 ### Invoke the Hash smb
 
