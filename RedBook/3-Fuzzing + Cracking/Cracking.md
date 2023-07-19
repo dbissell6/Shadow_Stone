@@ -48,6 +48,10 @@ for u in $(cat usernames.txt);do rpcclient -U "$u%Welcome1" -c "getusername;quit
 ## Offline
 Remember, if trying to crack a hash of something from a windows system, even if the cracking fails you might still be able to Pass The Hash.
 
+See all the hashes that can be converted to something john can crack
+```
+locate *2john*
+```
 ### hashcat example hashes
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/41352270-138e-4883-9a67-6c67197c3b95)
