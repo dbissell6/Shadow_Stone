@@ -18,6 +18,12 @@ dir secret.doc /s /p
 where /R C:\ waldo.txt
 ```
 
+### lazagne.exe
+Search for creds 
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/967edbe2-5a31-463d-95cd-e9b7e722be06)
+
+
 ### Snaffler 
 Snaffler is a tool that can help us acquire credentials or other sensitive data in an Active Directory environment. 
 
