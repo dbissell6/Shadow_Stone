@@ -227,3 +227,5 @@ git clone https://github.com/AlexisAhmed/CVE-2022-0847-DirtyPipe-Exploits.git
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/76aff3f3-4432-472f-a914-7c08c74a1148)
 
 
+## Pass the ticket
+https://academy.hackthebox.com/module/147/section/1657
