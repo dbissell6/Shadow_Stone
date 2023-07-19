@@ -225,10 +225,12 @@ Invoke-SMBExec -Target 172.16.1.10 -Domain inlanefreight.htb -Username julio -Ha
 Enter-PSSession -ComputerName 172.16.1.10 -Credential inlanefreight.htb\mark
 ```
 
-## pass the ticket from in windows
-https://academy.hackthebox.com/module/147/section/1639
-
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/aebb2d7f-6f6b-493b-b01b-0de102e2729e)
 
+
+
+
+## pass the ticket from in windows
+https://academy.hackthebox.com/module/147/section/1639
 
 
