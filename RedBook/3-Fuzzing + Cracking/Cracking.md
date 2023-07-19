@@ -9,6 +9,12 @@ It has two main branches, 1) Online cracking passwords/Spray. 2) Offline crackin
 ## Creating wordlists
 ![Pasted image 20230509090220](https://github.com/dbissell6/Shadow_Stone/assets/50979196/54c6eb3e-a0bd-4e30-ae44-2473c2703348)
 
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e19d3ea8-7a76-4678-83dc-0e8bba6f894f)
+
+```
+hashcat --force password.list -r /usr/share/hashcat/rules/best64.rule --stdout | sort -u > mut_password.list
+```
 ## Online
 Last route, hard to crack, easy to get blocked.
 
