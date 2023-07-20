@@ -42,3 +42,19 @@ for sub in $(cat /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1mill
 
 ## feroxbuster
 ![Pasted image 20220805174002](https://github.com/dbissell6/Shadow_Stone/assets/50979196/c660c189-25fe-4a09-9447-0f6c8b722cf4)
+
+
+## Zap crawling
+Can find files and direcotries by scanning the site for links.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b50cfe41-72c6-4804-a286-b6b4f0a2e60c)
+
+### Spider
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/3a2f8d81-a0dd-411f-8e42-597eec0575a5)
+
+Create folder on left
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/286e2767-69fa-49d0-aae7-ce82be073ecf)
+
+
