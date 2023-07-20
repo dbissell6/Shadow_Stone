@@ -5,6 +5,8 @@ Nmap, short for "Network Mapper," is a powerful and popular open-source network 
 
 ` -sV ` - Performs service version detection on specified ports.
 
+`-A ` -Perform more aggressive scan than sV
+
 `-sC` - Performs script enumeration.
 
 `-sU` - Performs a UDP scan.
