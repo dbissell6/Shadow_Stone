@@ -190,6 +190,24 @@ arp -a
 
 `1..1024 | % {echo ((new-object Net.Sockets.TcpClient).Connect("10.129.25.115",$_)) "Port $_ is open!"} 2>$null`
 
+### Example enumerating victim network
+run enumerate_network on victim
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/c12d1b65-4d70-4c64-afd3-54964c3f5ccb)
+
+Get list of open hosts back to attack machine
+
+
+Must connect with proxychains+ss. Run nmap_enumerate
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/21a9dfac-b42c-42c3-b9bf-700a17745784)
+
+```
+cat output_file | grep -Ev 'Service detection performed|Host is up|Not shown' > filtered_output.txt
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5aba6eb-1f3d-495e-bb01-0ebd1d8c2faa)
+
 ## Containers
 
 ### lxc example
