@@ -2,13 +2,31 @@
 
 Port forwarding can be useful if you get on to a victim and they are running a service locally that you want to interact with back on the attack machine. Or if the victim is connected to a network the attacker cannot access directly, proxychains in this case would allow the attacker to use the victim to attack the rest of the network
 
+
 ## ssh
 
 ![Pasted image 20220807173120](https://github.com/dbissell6/Shadow_Stone/assets/50979196/0868e1b6-51dd-443b-8adc-e7b5a0b44764)
 
 <img width="587" alt="Screen Shot 2022-10-02 at 7 14 03 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/790e1b77-fde9-4761-ae00-e3cda178ff00">
 
+## Example with ssh and proxy chains
+This example assumes attacker reached a victim that has access to networks the attacker had not previously had access to.
+
 ## proxychains
+make sure config is set up
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/12574f68-19d3-4858-824f-b589face8588)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1fe6b9e9-7206-4351-898c-1927972db6a1)
+
+
+```
+proxychains nmap -sV -sC -Pn -v -A --reason 172.16.8.3 2>&1 | grep -v -E 'socket error|timeout|Strict'
+```
+
+### Using Firefox
+Settings-> proxy
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8e5ae2e6-6dcc-4110-ae32-be7936c977f4)
 
 ## chisel
 
