@@ -203,12 +203,8 @@ Must connect with proxychains+ss. Run nmap_enumerate
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/21a9dfac-b42c-42c3-b9bf-700a17745784)
 
 ```
-sed -n '/^Nmap scan report for/,/Service detection performed/p' Total_interal_nmap > output_file
+sed -n '/^Nmap scan report for/,/Service detection performed/p' Total_interal_nmap | grep -Ev 'Service detection performed|Host is up|Not shown' > final_nmap_output
 ```
-```
-cat output_file | grep -Ev 'Service detection performed|Host is up|Not shown' > filtered_output.txt
-```
-
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5aba6eb-1f3d-495e-bb01-0ebd1d8c2faa)
 
 ## Containers
