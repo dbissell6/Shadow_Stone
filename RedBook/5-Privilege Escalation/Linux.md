@@ -73,7 +73,10 @@ history
 ```
 ## Cred hunt
 
-
+## search recursivly for password, showing file and line
+```
+find . -type f -exec grep -B2 -A2 -Hn "password" {} +
+```
 
 ### All hidden Files
 
