@@ -26,6 +26,7 @@ proxychains nmap -sV -sC -Pn -v -A --reason 172.16.8.3 2>&1 | grep -v -E 'socket
 
 ### Using Firefox
 Settings-> proxy
+
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8e5ae2e6-6dcc-4110-ae32-be7936c977f4)
 
 ## chisel
