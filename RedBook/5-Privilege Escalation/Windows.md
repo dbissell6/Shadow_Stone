@@ -51,6 +51,7 @@ On right side of screen, upload data, select zip file.
 
 ### Inveigh
 Like responder.
+
 ![Pasted image 20230508074627](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2ee76561-6c3a-4941-a859-0212c76bd8aa)
 
 ![Pasted image 20230508074732](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e51ce110-da44-4b04-aa14-5183bb46827f)
@@ -96,11 +97,22 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "Disab
 
 ```
 
+## Privs
 
-https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
+```
+whoami /priv
+```
+groups of user
+```
+whoami /groups
+```
+
 
 ## Network enumeration
 
+```
+netstat -ano
+```
 powershell to get current domain name
 ```
 (Get-WmiObject Win32_ComputerSystem).Domain
@@ -288,3 +300,4 @@ Find computers
 Get-ADComputer -Filter {OperatingSystem -like "*Windows Server*"}
 ```
 
+https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
