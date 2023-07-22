@@ -279,4 +279,12 @@ Enter-PSSession -ComputerName 172.16.1.10 -Credential inlanefreight.htb\mark
 ## pass the ticket from in windows
 https://academy.hackthebox.com/module/147/section/1639
 
+## just got admin on local
+
+## I just got admin on the dc
+
+Find computers
+```
+Get-ADComputer -Filter {OperatingSystem -like "*Windows Server*"}
+```
 
