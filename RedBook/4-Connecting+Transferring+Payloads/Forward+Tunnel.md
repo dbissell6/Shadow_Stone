@@ -29,6 +29,19 @@ Settings-> proxy
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8e5ae2e6-6dcc-4110-ae32-be7936c977f4)
 
+## Double pivot with metasploit
+This chain will allow us to directly ssh MGMT01 from kali
+Attack -> dmz01 -> DC01 -> MGMT01
+
+3 steps 
+1) create linux meterpreter shell for dmz01
+2) create windows meterpreter shell for DC01
+3) configure msfconsole
+4) run dmz
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/de563e25-4b0b-4373-91ce-be1e27496bb1)
+
+
 ## chisel
 
 
