@@ -252,7 +252,7 @@ $NewUserParams = @{
 }
 
 New-ADUser @NewUserParams
-Add-ADGroupMember -Identity "Domain Admins" -Members "NewAdminUser"
+Add-ADGroupMember -Identity "Domain Admins" -Members "ViviG"
 ```
 
 
