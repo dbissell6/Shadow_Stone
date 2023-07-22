@@ -242,11 +242,11 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 Import-Module ActiveDirectory
 
 $NewUserParams = @{
-    SamAccountName = "NewAdminUser"   # Replace with desired username
+    SamAccountName = "ViviG"   # Replace with desired username
     UserPrincipalName = "VIVIG@INLANEFREIGHT.LOCAL"   # Replace with desired UPN
-    Name = "New Admin User"          # Replace with desired display name
-    GivenName = "New"                # Replace with desired first name
-    Surname = "Admin"                # Replace with desired last name
+    Name = "VivisGhost"          # Replace with desired display name
+    GivenName = "Vivis"                # Replace with desired first name
+    Surname = "Ghost"                # Replace with desired last name
     AccountPassword = (ConvertTo-SecureString "VIVIG123" -AsPlainText -Force)   # Replace with desired password
     Enabled = $true
 }
