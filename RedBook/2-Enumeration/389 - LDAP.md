@@ -11,6 +11,8 @@ LDAP, which stands for Lightweight Directory Access Protocol, is a widely used a
 
 * LDAP Trust Relationships: In larger environments, LDAP may involve trust relationships between multiple directories or domains. Penetration testers analyze the trust relationships in place, including cross-domain authentication and trust configurations, to identify potential security weaknesses or misconfigurations that could lead to unauthorized access or information leakage.
 
+Microsoft Active Directory (AD) is based on the LDAP
+
 ## ldapsearch
 
 ```
