@@ -49,12 +49,6 @@ On right side of screen, upload data, select zip file.
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5b2b0c34-e3d0-47bd-9417-93f34e58df93)
 
 
-### Inveigh
-Like responder.
-
-![Pasted image 20230508074627](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2ee76561-6c3a-4941-a859-0212c76bd8aa)
-
-![Pasted image 20230508074732](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e51ce110-da44-4b04-aa14-5183bb46827f)
 
 ## AV 
 Get status of AV
@@ -107,6 +101,7 @@ groups of user
 whoami /groups
 ```
 
+### priv attacks
 
 ## Network enumeration
 
@@ -292,6 +287,14 @@ Enter-PSSession -ComputerName 172.16.1.10 -Credential inlanefreight.htb\mark
 https://academy.hackthebox.com/module/147/section/1639
 
 ## just got admin on local
+
+### Inveigh
+Like responder.
+
+![Pasted image 20230508074627](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2ee76561-6c3a-4941-a859-0212c76bd8aa)
+
+![Pasted image 20230508074732](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e51ce110-da44-4b04-aa14-5183bb46827f)
+
 
 ## I just got admin on the dc
 
