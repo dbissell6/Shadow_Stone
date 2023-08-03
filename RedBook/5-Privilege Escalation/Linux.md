@@ -235,6 +235,19 @@ lxc exec privesc -- sh -c 'ls /mnt/root/root/'
 
 ## Recent Exploit examples
 
+### Screen example
+HTB Wall Machine
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/9dd2ba5b-0182-42f7-90d2-9ac622bc84a8)
+
+Put in /dev/shm and run
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1ded2fa4-cc53-4c91-8c8c-2a4720d23017)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/afe7e5b5-b945-4d7d-b8eb-5bdc699468d3)
+
+
+
 ### cve-2021-4034
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2effd935-52ff-4625-b15b-f3ad4a438c4d)
