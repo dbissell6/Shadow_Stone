@@ -171,8 +171,13 @@ Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Ob
 ```
 
 
-
-
+## Scheduled Tasks
+```
+Get-ScheduledTask
+```
+```
+schtasks /query
+```
 ## Process search
 
 ```
