@@ -90,4 +90,12 @@ Now can
 ```
 set payload windows/x64/meterpreter/reverse_tcp
 ```
+## Sliver
 
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/47d173f7-f725-4f09-a7d5-407fd6d67398)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/61c75ccc-9ad2-4aaa-a186-458ebf22ddff)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5844f8d6-9654-4bbf-9079-357bb7c5161e)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/66e93bb6-8523-46fb-9753-ae8fcbda44ee)
