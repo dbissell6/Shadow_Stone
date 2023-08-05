@@ -33,7 +33,11 @@ Settings-> proxy
 This chain will allow us to directly ssh MGMT01 from kali
 Attack -> dmz01 -> DC01 -> MGMT01
 
-3 steps 
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/703b0623-1e04-4507-b261-1a6939549755)
+
+
+
+Steps 
 1) create linux meterpreter shell for dmz01
 2) create windows meterpreter shell for DC01
 3) configure msfconsole
