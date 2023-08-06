@@ -44,7 +44,14 @@ SSL/TLS secure channel
 
 
 ### ssh/scp
-<img width="290" alt="Pasted image 20220807171219" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/a3a24e55-87f1-4bee-aa11-ad9678dd4ed5">
+
+Local to Remote
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/cf6142e3-11ca-4f7d-89ee-b18a2ab38ac8)
+
+Remote to Local
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f183cb25-5143-4896-a101-d4b29ee8c273)
 
 
 ### smb with username + pass
