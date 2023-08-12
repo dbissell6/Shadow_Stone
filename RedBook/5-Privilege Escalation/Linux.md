@@ -210,11 +210,26 @@ sed -n '/^Nmap scan report for/,/Service detection performed/p' Total_interal_nm
 ```
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5aba6eb-1f3d-495e-bb01-0ebd1d8c2faa)
 
+## Docker
+TO list dockers
+```
+docker ps
+```
+Get a shell in a docker from the list
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7c45185c-ee37-41a3-b044-6f811b0e834d)
+
+
 ## Containers
 
 ### lxc example
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/eba875bc-37ee-45ad-b2f6-399e9814e086)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/305b369b-a890-44b5-9db6-c48aeb968517)
+
+
+
 
 ```
 cd ContainerImages/
