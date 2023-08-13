@@ -77,6 +77,9 @@ history
 ```
 find . -type f -exec grep -B2 -A2 -Hn "password" {} +
 ```
+```
+grep -rEi '(password|pass|username|credential)=.*' .
+```
 
 ### All hidden Files
 
