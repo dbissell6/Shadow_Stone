@@ -147,7 +147,9 @@ find / -type f -perm -4000 2>/dev/null
 
 ## Process Search
 
-`ps -aux`
+```
+ps auxww
+```
 ```
 pstree
 ```
