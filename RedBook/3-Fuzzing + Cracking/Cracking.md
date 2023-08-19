@@ -80,3 +80,14 @@ hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u
 ### AS-REPRoastable hashes
 ![Pasted image 20230503112725](https://github.com/dbissell6/Shadow_Stone/assets/50979196/28d33815-bf5f-4b74-841b-7e51389c715a)
 
+### SSH
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/83168a86-d864-4a78-a466-d28c524f86a6)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/bee30523-84f3-4241-ac99-7fd431dfff39)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f4dc63bd-7305-4816-9414-436321ffeac9)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/32d8b87c-c786-4bba-aabc-c6230e4d44a5)
+
+
