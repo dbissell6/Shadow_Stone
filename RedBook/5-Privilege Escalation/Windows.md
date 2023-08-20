@@ -1,6 +1,12 @@
 # Windows Priv Esc
 
+Cred Hunting
 
+ACLs
+
+Attacking SAM
+
+Attacking LSASS
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8034c6d9-6158-4997-802e-73b109446aa4)
 
@@ -169,6 +175,64 @@ solves this problem.
 ```
 Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
 ```
+
+## Access Control Lists(ACLS)
+
+### Enumeration with native tools
+
+```
+Get-ADUser -Filter * | Select-Object -ExpandProperty SamAccountName > ad_users.txt
+```
+```
+foreach($line in [System.IO.File]::ReadLines("C:\Users\htb-student\Desktop\ad_users.txt")) {get-acl  "AD:\$(Get-ADUser $line)" | Select-Object Path -ExpandProperty Access | Where-Object {$_.IdentityReference -match 'INLANEFREIGHT\\wley'}}
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/a252cab8-daa9-47e1-a7d6-623336f71944)
+
+
+```
+$guid= "00299570-246d-11d0-a768-00aa006e0529"
+```
+
+```
+Get-ADObject -SearchBase "CN=Extended-Rights,$((Get-ADRootDSE).ConfigurationNamingContext)" -Filter {ObjectClass -like 'ControlAccessRight'} -Properties * |Select Name,DisplayName,DistinguishedName,rightsGuid| ?{$_.rightsGuid -eq $guid} | fl
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/a70b572a-10db-436b-b3df-15743139174e)
+
+### Enumeration with PowerView
+
+
+```
+Import-Module .\PowerView.ps1;
+$sid = Convert-NameToSid wley
+```
+
+```
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/dfc99669-2082-4244-8950-10b61f4eb71e)
+
+We can see the user we have pwnd has the ablity to change the password for CN=Dana Amundsen
+
+
+### Abuse
+
+Create the password and cred object for our user, create a new password for the damunden user and run the PowerView script.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/a5ae4e6b-b57a-4564-933b-d30b39868c46)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/89f0888b-ac63-499d-a51a-2cc827a5e005)
+
+
+## DCSync
+DCSync is a method used to extract the password database of Active Directory. It works by exploiting the Directory Replication Service Remote Protocol, which is employed by Domain Controllers to synchronize domain data. In essence, it enables an attacker to impersonate a Domain Controller and obtain user NTLM password hashes.
+
+The core of this attack involves requesting a Domain Controller to replicate passwords through the DS-Replication-Get-Changes-All extended right. This right is a specific access control privilege in Active Directory that allows for the replication of confidential data.
+
+To execute this attack, the attacker needs control over an account with the necessary permissions for domain replication, namely, a user account with the Replicating Directory Changes and Replicating Directory Changes All permissions enabled.
+
 
 
 ## Scheduled Tasks
