@@ -299,6 +299,14 @@ A heap-based buffer overflow vulnerability. This security issue impacted specifi
     Version 1.8.27, Debian 10
     Version 1.9.2, Fedora 33
 
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/040d968c-cc28-4016-ba3c-b319317e7923)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f3e626e4-1bc4-49d2-843b-02b4716fd49b)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b4315ab0-9dc1-4e98-85a4-ca47cd074b5b)
+
+
 ## Python Abuse
 
 Notice python file with root privs able to be executed by user
