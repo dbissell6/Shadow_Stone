@@ -2,11 +2,17 @@
 
 Cred Hunting
 
+AV
+
 ACLs
+
+BloodHound
 
 Attacking SAM
 
 Attacking LSASS
+
+Post-Admin
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8034c6d9-6158-4997-802e-73b109446aa4)
 
@@ -39,25 +45,6 @@ Search for creds
 Snaffler is a tool that can help us acquire credentials or other sensitive data in an Active Directory environment. 
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/96179d5a-2b09-4149-8540-927ba2e13e9c)
-
-
-### Bloodhound
-
-To Run bloodhound. Upload and run sharphound to the victim.
-
-![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/00c27b7f-51ca-49bd-9ec2-db1c5c8887b2)
-
-Download zipfile to attack machine. Start neo4j.
-
-![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8f08ccad-6198-4250-b2fd-baacef6d37b4)
-
-Start Bloodhound. Login
-
-![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/373b653d-01df-4491-942b-98dad01b9f2a)
-
-On right side of screen, upload data, select zip file.
-
-![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5b2b0c34-e3d0-47bd-9417-93f34e58df93)
 
 
 
@@ -178,6 +165,7 @@ Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Ob
 
 ## Access Control Lists(ACLS)
 
+BloodHound is also really useful.
 ### Enumeration with native tools
 
 ```
@@ -226,6 +214,28 @@ Create the password and cred object for our user, create a new password for the 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/89f0888b-ac63-499d-a51a-2cc827a5e005)
 
 
+
+## Bloodhound
+
+To Run bloodhound. Upload and run sharphound to the victim.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/00c27b7f-51ca-49bd-9ec2-db1c5c8887b2)
+
+Download zipfile to attack machine. Start neo4j.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8f08ccad-6198-4250-b2fd-baacef6d37b4)
+
+Start Bloodhound. Login
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/373b653d-01df-4491-942b-98dad01b9f2a)
+
+On right side of screen, upload data, select zip file.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5b2b0c34-e3d0-47bd-9417-93f34e58df93)
+
+
+
+
 ## DCSync
 DCSync is a method used to extract the password database of Active Directory. It works by exploiting the Directory Replication Service Remote Protocol, which is employed by Domain Controllers to synchronize domain data. In essence, it enables an attacker to impersonate a Domain Controller and obtain user NTLM password hashes.
 
@@ -252,6 +262,14 @@ powershell code
 Get-NetTCPConnection | Select-Object -Property *,@{'Name' = 'ProcessName';'Expression'={(Get-Process -Id $_.OwningProcess).Name}}
 ```
 <img width="569" alt="Screen Shot 2022-08-05 at 5 23 55 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/9db828d4-b9dd-4a77-a096-56761e7380b9">
+
+
+## Moving between Users
+
+
+
+## Move between 
+
 
 
 ## Attacking SAM
@@ -352,11 +370,6 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/73175859-68c8-4c57-b017-179492da0fdb)
 
 
-## Moving between Users
-
-
-
-## Move between 
 
 ### Create user with .exe
 
