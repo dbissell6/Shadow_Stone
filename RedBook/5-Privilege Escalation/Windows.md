@@ -243,6 +243,20 @@ The core of this attack involves requesting a Domain Controller to replicate pas
 
 To execute this attack, the attacker needs control over an account with the necessary permissions for domain replication, namely, a user account with the Replicating Directory Changes and Replicating Directory Changes All permissions enabled.
 
+## GPOs
+
+A Group Policy Object (GPO) is a set of policy settings used for configuration management in Active Directory. GPOs contain various policy settings and are linked to specific Organizational Units (OUs) within Active Directory. They can be restricted to apply only to certain objects or conditions.
+
+Initially, only privileged roles like Domain Admins can modify GPOs. However, in some cases, less privileged accounts are granted edit permissions. This can pose a security risk as compromised users could then modify GPOs. Attackers could add malicious scripts or tasks, potentially compromising all computer objects in the linked OUs.
+
+Additionally, GPOs are used for software installation and configuring startup scripts from network shares. Misconfigured network shares may allow adversaries to replace files with malicious ones, even if the GPO itself is properly configured.
+
+List with powershell + wmi 
+```
+$GPOs = Get-WmiObject -Namespace "Root\RSOP\Computer" -Query "Select * From RSOP_GPO" | Select DisplayName, Name
+$GPOs
+```
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/2f60845d-b52b-4b26-bb64-e16334e27c18)
 
 
 ## Scheduled Tasks
