@@ -289,6 +289,9 @@ schtasks /query
 ```
 Get-Process
 ```
+```
+Get-Service
+```
 powershell code
 ```
 Get-NetTCPConnection | Select-Object -Property *,@{'Name' = 'ProcessName';'Expression'={(Get-Process -Id $_.OwningProcess).Name}}
