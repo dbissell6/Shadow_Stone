@@ -14,9 +14,27 @@ Attacking LSASS
 
 Post-Admin
 
+
+### Initial enumeration
+System
+
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8034c6d9-6158-4997-802e-73b109446aa4)
 
 
+
+
+cmd to check hidden files
+
+```
+dir /A H
+```
+
+### cmd help
+any command with /? will show help and options.
+
+```
+move /?
+```
 ## Credential hunting code chunks
 
 <img width="657" alt="Screen Shot 2022-08-06 at 2 44 39 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/96928590-0c83-4281-bbf9-cd0e5c5be354">
