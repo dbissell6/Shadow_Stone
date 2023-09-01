@@ -254,13 +254,6 @@ On right side of screen, upload data, select zip file.
 
 
 
-## DCSync
-DCSync is a method used to extract the password database of Active Directory. It works by exploiting the Directory Replication Service Remote Protocol, which is employed by Domain Controllers to synchronize domain data. In essence, it enables an attacker to impersonate a Domain Controller and obtain user NTLM password hashes.
-
-The core of this attack involves requesting a Domain Controller to replicate passwords through the DS-Replication-Get-Changes-All extended right. This right is a specific access control privilege in Active Directory that allows for the replication of confidential data.
-
-To execute this attack, the attacker needs control over an account with the necessary permissions for domain replication, namely, a user account with the Replicating Directory Changes and Replicating Directory Changes All permissions enabled.
-
 ## GPOs
 
 A Group Policy Object (GPO) is a set of policy settings used for configuration management in Active Directory. GPOs contain various policy settings and are linked to specific Organizational Units (OUs) within Active Directory. They can be restricted to apply only to certain objects or conditions.
@@ -414,9 +407,57 @@ PS C:\Windows\System32> ./rundll32.exe C:\Windows\System32\comsvcs.dll MiniDump 
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7ec65850-6bd5-4b23-aa62-62fdc4457f0d)
 
+## Coercing Attacks & Unconstrained Delegation
+
+Coercion-based attacks serve as a comprehensive method for elevating privileges, enabling the transition from any user to a Domain Administrator. Virtually all organizations employing a default Active Directory (AD) setup are susceptible to these attacks. Any user within the domain can compel the RemoteServer$ account to initiate authentication with any machine in the domain. Subsequently, the Coercer tool was created to exploit all identified vulnerable RPC functions concurrently.
+
+Powerview to see Unconstrained
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b42f1114-e503-46bb-9f4d-c9e1a0d828d2)
 
 
-### get admin of DC create another admin user with powershell and active directory
+Start Rubeus
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/cf2ed240-ead9-43cf-9a63-7aa25cab5dc8)
+
+
+Connect with coercer
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/c356a0aa-8d99-4bcd-979a-789f44dc2e4d)
+
+
+Get TGT on Rubeus
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/0682498b-8556-4319-9dd5-7f188a1dfc9e)
+
+DCSync with ticket / explaination below
+
+Rubeus to import ticket
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/bd8042ee-6ef9-4cf3-a8b4-f14447788ca0)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/bc902410-41ff-41ed-839d-89eea6866f2f)
+
+
+Mimikatz to dump hash
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/ab00cee6-f000-4db7-959b-efbc86df642a)
+
+
+Connect as DC1/Administrator
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/1ca5cc60-392b-4b75-b67d-7a448c043962)
+
+
+### DCSync
+DCSync is a method used to extract the password database of Active Directory. It works by exploiting the Directory Replication Service Remote Protocol, which is employed by Domain Controllers to synchronize domain data. In essence, it enables an attacker to impersonate a Domain Controller and obtain user NTLM password hashes.
+
+The core of this attack involves requesting a Domain Controller to replicate passwords through the DS-Replication-Get-Changes-All extended right. This right is a specific access control privilege in Active Directory that allows for the replication of confidential data.
+
+To execute this attack, the attacker needs control over an account with the necessary permissions for domain replication, namely, a user account with the Replicating Directory Changes and Replicating Directory Changes All permissions enabled.
+
+
+## get admin of DC create another admin user with powershell and active directory
 
 ```
 Import-Module ActiveDirectory
