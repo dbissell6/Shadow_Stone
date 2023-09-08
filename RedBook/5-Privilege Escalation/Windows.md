@@ -92,6 +92,12 @@ Turn off Real-time
 Set-MpPreference -DisableIOAVProtection $true
 ```
 
+Turn off firewalls
+
+```
+netsh advfirewall set allprofiles state off
+```
+
 <img width="783" alt="Screen Shot 2022-10-10 at 2 15 20 PM" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/38ce0352-57e2-4ccb-a68a-bbb6e49eb5ed">
 
 ## Temporary bypass
