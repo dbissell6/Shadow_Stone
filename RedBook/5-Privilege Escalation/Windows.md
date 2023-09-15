@@ -127,6 +127,13 @@ net user bob
 ```
 whoami /priv
 ```
+
+Check users of the domain AD
+
+```
+net user /domain
+```
+
 groups of user
 ```
 whoami /groups
