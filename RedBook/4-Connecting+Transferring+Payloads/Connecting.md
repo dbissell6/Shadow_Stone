@@ -8,6 +8,11 @@
 
 ![Pasted image 20220805223538](https://github.com/dbissell6/Shadow_Stone/assets/50979196/d92f2276-a278-4a74-9dd9-fd2cd46a581a)
 
+### winrm powershell remote session
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/ef418236-3d94-4e3d-b33f-54af4e3d99e8)
+
+
 ## Windows to Windows
 
 ### Open rpc
