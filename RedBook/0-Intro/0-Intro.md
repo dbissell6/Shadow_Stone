@@ -1,5 +1,7 @@
 # Introduction to Red Teaming
 
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/60d71ead-83a2-46d3-a43e-73d8d41184aa)
+
 The attack chain, also known as the cyber kill chain or attack lifecycle, is a systematic process that reflects the stages of a cyberattack from early reconnaissance to achieving the ultimate goal of data exfiltration and maintaining a presence within the target network. Understanding each phase helps red teams to simulate realistic attacks, assess the security posture of an organization, and develop robust defenses.
 
 ![Pasted image 20220805171026](https://github.com/dbissell6/Shadow_Stone/assets/50979196/55419ee4-8431-4925-a8c0-3378cc92952e)
