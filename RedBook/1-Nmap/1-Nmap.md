@@ -21,6 +21,12 @@ Nmap, short for "Network Mapper," is a powerful and popular open-source network 
 
 `-p` - port
 
+`--disable-arp-ping` - disable arp ping
+
+`--packet-trace` - Trace the packets
+
+`-D` - Decoys
+
 ## Sample commands
 ```
 nmap -p- --min-rate 10000 10.10.11.153 -Pn -v
@@ -35,9 +41,21 @@ nmap -p- -v -sC -sV --open --min-rate=1000 10.10.11.142
 
 
 UDP scan
+
 ```
 sudo nmap 10.129.2.28 -F -sU
 ```
+
+## Using a script
+
+
+
+## IDS/IPS evasion
+
+RND: 5 - 5 random IP to mask
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/ea519f55-1606-4a42-aab4-2c278fa0a154)
+
 
 ## Nmap without nmap
 <img width="192" alt="Pasted image 20220807171657" src="https://github.com/dbissell6/Shadow_Stone/assets/50979196/2eec3cdf-6795-439f-b68f-62f72a656d0a">
