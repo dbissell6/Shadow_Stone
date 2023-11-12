@@ -69,6 +69,10 @@ See all the hashes that can be converted to something john can crack
 locate *2john*
 ```
 
+## md5 with format
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5958012a-fe55-4325-a4d8-ebd9de77f59b)
+
 
 ## zip password
 ![Pasted image 20220805161528](https://github.com/dbissell6/Shadow_Stone/assets/50979196/eeed6c7b-2722-4d0c-aa1b-82c38390554a)
