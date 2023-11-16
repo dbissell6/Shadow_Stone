@@ -8,9 +8,13 @@ Example create fake twitter site to harvest credentials
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b0143a97-fd14-413a-9935-8cb3abe37c60)
 
 `1) Spear-Phishing Attack Vectors`
+
 `2) Website Attack Vectors`
+
 `3) Credential Harvester Attack Method`
+
 `1) Web Templates`
+
 `3. Twitter`
 
 
