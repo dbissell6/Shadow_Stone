@@ -14,6 +14,48 @@
 | Enterprise Admin| Domain | Full access to all resources across the entire organization, surpassing domain-specific limits. |
 
 
+## Privs
+```
+Get-LocalUser
+```
+```
+net user bob
+```
+```
+whoami /priv
+```
+
+Check users of the domain AD
+
+```
+net user /domain
+```
+
+groups of user
+```
+whoami /groups
+```
+```
+Get-LocalGroup
+```
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5257988-299c-4118-9b0b-cdb1b558df1c)
+
+
+### priv attacks
+
+## Network enumeration
+
+```
+netstat -ano
+```
+powershell to get current domain name
+```
+(Get-WmiObject Win32_ComputerSystem).Domain
+```
+
+
+
 Cred Hunting
 
 AV
@@ -131,45 +173,6 @@ Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Lsa" -Name "Disab
 
 ```
 
-## Privs
-```
-Get-LocalUser
-```
-```
-net user bob
-```
-```
-whoami /priv
-```
-
-Check users of the domain AD
-
-```
-net user /domain
-```
-
-groups of user
-```
-whoami /groups
-```
-```
-Get-LocalGroup
-```
-
-![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b5257988-299c-4118-9b0b-cdb1b558df1c)
-
-
-### priv attacks
-
-## Network enumeration
-
-```
-netstat -ano
-```
-powershell to get current domain name
-```
-(Get-WmiObject Win32_ComputerSystem).Domain
-```
 .ps1 to find hosts in a network
 ```
 $subnet = "172.16.9" # The first three octets of the subnet
