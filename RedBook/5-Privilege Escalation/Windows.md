@@ -1,5 +1,18 @@
 # Windows Priv Esc
 
+
+| Privilege Level | Type   | Description                                                                                     |
+|-----------------|--------|-------------------------------------------------------------------------------------------------|
+| Guest User      | Local  | Provides initial entry to the PC with restricted access.                                        |
+| Regular User    | Local  | Standard account permissions on a local machine.                                                |
+| Admin           | Local  | Elevated account privileges within a local system environment.                                  |
+| NT Authority    | Local  | The highest level of privilege on a local system, with comprehensive control.                   |
+| Regular User    | Domain | Standard user in the domain, included in the 'Users' group with typical permissions.            |
+| Delegated Admin | Domain | Enhanced administrative rights, with additional powers beyond a standard user.                  |
+| Domain Admin    | Domain | Top-tier privileges across the domain, with the ability to manage domain-wide resources.        |
+| Enterprise Admin| Domain | Full access to all resources across the entire organization, surpassing domain-specific limits. |
+
+
 Cred Hunting
 
 AV
