@@ -34,6 +34,11 @@
 | Hotfixes            | `wmic qfe get hotfixid`                           |
 
 
+wmic to launch a process
+`
+wmic process call create "notepad.exe"
+`
+
 ## Privs
 ```
 Get-LocalUser
