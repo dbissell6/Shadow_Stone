@@ -14,6 +14,26 @@
 | Enterprise Admin| Domain | Full access to all resources across the entire organization, surpassing domain-specific limits. |
 
 
+## WMIC enumeration
+
+| Category            | Command                                           |
+|---------------------|---------------------------------------------------|
+| System Information  | `wmic computersystem list full`                   |
+| BIOS Information    | `wmic bios get name,serialnumber,version`         |
+| CPU Information     | `wmic cpu get name,CurrentClockSpeed,maxclockspeed,status` |
+| Running Processes   | `wmic process list brief`                         |
+| Memory Usage        | `wmic os get freephysicalmemory, totalvisiblememorysize`   |
+| Disk Drives         | `wmic diskdrive get name,size,model`              |
+| Logical Disks       | `wmic logicaldisk get name,freespace,size`        |
+| Installed Software  | `wmic product get name,version`                   |
+| Network Adapters    | `wmic nic get name, macaddress, speed`            |
+
+| Startup Commands    | `wmic startup list full`                          |
+| Environment Variables | `wmic environment list`                         |
+| Services            | `wmic service list brief`                         |
+| Hotfixes            | `wmic qfe get hotfixid`                           |
+
+
 ## Privs
 ```
 Get-LocalUser
@@ -24,6 +44,8 @@ net user bob
 ```
 whoami /priv
 ```
+
+| User Accounts       | `wmic useraccount list brief`                     |
 
 Check users of the domain AD
 
