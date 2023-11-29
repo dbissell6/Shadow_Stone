@@ -9,6 +9,14 @@ Make sure Intercept is on
 
 Right click or click Action button to send to Repeater or Intruder
 
+Other options
+
+`Change request method` Change post-get
+`Copy to file` useful for programs like sqlmap -r
+`Copy as curl commmand(bash)`
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/90317dc3-13a0-4b82-ae69-a5b782ee7fd0)
+
 ## Repeater
 Repeater will keep the request after submitting allowing for constant refinement of the payload.
 
