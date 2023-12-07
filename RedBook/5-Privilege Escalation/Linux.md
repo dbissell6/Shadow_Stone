@@ -144,6 +144,22 @@ find / -perm -u=s -type f 2>/dev/null
 find / -type f -perm -4000 2>/dev/null
 ```
 
+Example 
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/74db6e1a-02cf-48ce-89f7-3aaf42ee7bb4)
+
+Here we find a copy mechanism we can run as root.
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e2a78334-26d1-46b0-aaf9-44f54e6e6c2e)
+
+We can copy something, but still dont have access to read.  
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/5c442054-f53f-45df-97dc-b6bc135f20fc)
+
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/359a6dd4-ff34-48e2-97c4-f36db215407d)
+
+That second column in etc/pass wd holds what used to be the password and what is now in shadow, leaving this blank will result in user not needing to enter password. Could also change /etc/group and add user to root, this requires a restart. cronjobs are a something to watch for here.
 
 ## Process Search
 
