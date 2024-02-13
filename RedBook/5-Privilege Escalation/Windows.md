@@ -136,20 +136,45 @@ dir secret.doc /s /p
 where /R C:\ waldo.txt
 ```
 
-### lazagne.exe
+## lazagne.exe
 Search for creds 
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/967edbe2-5a31-463d-95cd-e9b7e722be06)
 
 
-### Snaffler 
+
+
+
+# Active Directory
+
+## Snaffler 
 Snaffler is a tool that can help us acquire credentials or other sensitive data in an Active Directory environment. 
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/96179d5a-2b09-4149-8540-927ba2e13e9c)
 
 
+## ADCS
 
-## AV 
+Active Directory Certificate Services 
+
+Enumerate Certificate Services.
+
+### Certipy
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b15d4c16-febf-4eb7-84c6-b421259763c7)
+
+### NETEXEC
+
+`https://github.com/Pennyw0rth/NetExec`
+
+### Certify
+
+`https://github.com/Flangvik/SharpCollection/blob/master/NetFramework_4.7_x64/Certify.exe`
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7df2b073-0a1e-40f2-8912-32ec671b9c3c)
+
+
+## Anti-Virus 
 Get status of AV
 
 ![Pasted image 20230508095011](https://github.com/dbissell6/Shadow_Stone/assets/50979196/deb17c10-cb12-4381-8f96-040497f65966)
