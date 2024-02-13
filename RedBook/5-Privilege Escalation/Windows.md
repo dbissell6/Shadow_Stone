@@ -163,6 +163,8 @@ Enumerate Certificate Services.
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b15d4c16-febf-4eb7-84c6-b421259763c7)
 
+request cert
+
 ### NETEXEC
 
 `https://github.com/Pennyw0rth/NetExec`
@@ -173,6 +175,19 @@ Enumerate Certificate Services.
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7df2b073-0a1e-40f2-8912-32ec671b9c3c)
 
+request
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8134c0a8-336c-483b-971e-0f358e418032)
+
+authenticate to get tgt and hash
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/3ded7ca8-2b53-4c9c-9f1b-fcea0209cac1)
+
+connect to dc with tgt
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f91d6aab-eb38-4eb0-a753-247893272d7d)
+
+could also use pth and evil-winrm
 
 ## Anti-Virus 
 Get status of AV
