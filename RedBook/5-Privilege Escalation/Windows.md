@@ -83,21 +83,6 @@ powershell to get current domain name
 
 
 
-Cred Hunting
-
-AV
-
-ACLs
-
-BloodHound
-
-Attacking SAM
-
-Attacking LSASS
-
-Post-Admin
-
-
 ### Initial enumeration
 System
 
