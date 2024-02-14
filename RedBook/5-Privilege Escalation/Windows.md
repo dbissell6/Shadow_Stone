@@ -165,18 +165,6 @@ Enumerate Certificate Services.
 
 request cert
 
-### NETEXEC
-
-`https://github.com/Pennyw0rth/NetExec`
-
-### Certify
-
-`https://github.com/Flangvik/SharpCollection/blob/master/NetFramework_4.7_x64/Certify.exe`
-
-![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7df2b073-0a1e-40f2-8912-32ec671b9c3c)
-
-request
-
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/8134c0a8-336c-483b-971e-0f358e418032)
 
 authenticate to get tgt and hash
@@ -188,6 +176,16 @@ connect to dc with tgt
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f91d6aab-eb38-4eb0-a753-247893272d7d)
 
 could also use pth and evil-winrm
+
+### NETEXEC
+
+`https://github.com/Pennyw0rth/NetExec`
+
+### Certify
+
+`https://github.com/Flangvik/SharpCollection/blob/master/NetFramework_4.7_x64/Certify.exe`
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/7df2b073-0a1e-40f2-8912-32ec671b9c3c)
 
 ## Anti-Virus 
 Get status of AV
