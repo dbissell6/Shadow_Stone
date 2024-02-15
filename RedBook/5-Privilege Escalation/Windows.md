@@ -595,6 +595,8 @@ Get-ADComputer -Filter {OperatingSystem -like "*Windows Server*"}
 
 ## dll highjacking
 
+
+
 ## startup
 
 will only run when user connects with graphical interface like rpd(wont work if winrm), will not run .ps1 files, only bats or exe.
