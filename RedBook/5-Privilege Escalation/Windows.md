@@ -163,7 +163,9 @@ Important Items in ADCS
 
 Active Directory Certificate Services (AD CS) interacts with various file formats and objects as part of its operations in managing certificates within a Public Key Infrastructure (PKI). Here are some of the key objects and file formats you might encounter:
 
-.PFX (Personal Information Exchange) Files: These files are used to store a certificate and its private and public keys in a single encrypted file. PFX files are commonly used for transporting and importing/exporting certificates and private keys across different systems. They support password protection, which adds a layer of security when transferring sensitive information.
+.pfx (Personal Information Exchange) Files: These files are used to store a certificate and its private and public keys in a single encrypted file. PFX files are commonly used for transporting and importing/exporting certificates and private keys across different systems. They support password protection, which adds a layer of security when transferring sensitive information.
+
+.ccache (Credential Cache) Files: While not directly a part of AD CS, .ccache files are related to the broader context of secure communication in networks. They are used by Kerberos authentication systems to temporarily store a user's credentials. In environments where AD CS is part of a broader security framework that includes Kerberos, you might encounter these files.
 
 .CER/.CRT (Certificate) Files: These files contain a digital certificate that is used by various types of software to prove the identity of the certificate holder and to ensure that the public key contained in the certificate can be trusted. .CER and .CRT are often used interchangeably and can be in different formats such as binary DER form or ASCII PEM form.
 
@@ -171,7 +173,6 @@ Active Directory Certificate Services (AD CS) interacts with various file format
 
 .KEY Files: These files usually contain a private key, separate from the certificate. The private key is a crucial part of the PKI and SSL security. It is used to decrypt information encrypted with the public key.
 
-.CCACHE (Credential Cache) Files: While not directly a part of AD CS, .ccache files are related to the broader context of secure communication in networks. They are used by Kerberos authentication systems to temporarily store a user's credentials. In environments where AD CS is part of a broader security framework that includes Kerberos, you might encounter these files.
 
 
 There are 4 broad categories of ADCS attacks.
@@ -203,6 +204,8 @@ connect to dc with tgt
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/f91d6aab-eb38-4eb0-a753-247893272d7d)
 
 could also use pth and evil-winrm
+
+### Coercer
 
 ### NETEXEC
 
