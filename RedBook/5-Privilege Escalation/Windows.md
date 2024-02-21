@@ -140,11 +140,53 @@ Snaffler is a tool that can help us acquire credentials or other sensitive data 
 
 ## ADCS
 
-Active Directory Certificate Services 
+Active Directory Certificate Services.
+
+Active Directory Certificate Services (AD CS) is a Microsoft Windows server role that allows you to build a public key infrastructure (PKI) and provide digital certificate management services. These services include issuing, validating, and revoking public key certificates, which are essential for enabling secure communications and transactions over networks. AD CS can be used to enhance security by providing a framework for encrypted data exchange, digital signatures, secure email, and web authentication.
+
+Key Concepts in ADCS
+
+Certificate Templates: These are pre-set configurations determining the characteristics and intended use of certificates distributed by AD CS. They include parameters like the certificate's purpose, the size of its key, its duration of validity, and the policies governing its issuance. AD CS provides a range of default templates (for instance, for Web Servers or Code Signing) and also allows administrators to create bespoke templates to meet specific organizational needs.
+
+Public Key Infrastructure (PKI): This is an extensive framework that combines technology, processes, policies, and standards to facilitate the issuance, management, distribution, and revocation of digital certificates. It includes Certification Authorities (CAs) and registration authorities that verify the identities of entities engaged in electronic communications through public key encryption.
+
+Certification Authority (CA): A key entity within PKI, a CA is tasked with issuing digital certificates to individuals, devices, and services. It also manages the lifecycle of these certificates, ensuring their validity.
+
+Certificate Enrollment: This process involves entities applying for certificates from CAs. The CA verifies the applicant's identity before issuing a certificate.
+
+Certificate Manager: This role entails overseeing the issuance and management of certificates and handling requests for enrollment and revocation.
+
+Digital Certificate: This is an electronic credential that contains identity information (such as names of individuals or organizations) and a matching public key. Digital certificates are used for authentication, verifying the identity of a person or device.
+
+
+Important Items in ADCS
+
+Active Directory Certificate Services (AD CS) interacts with various file formats and objects as part of its operations in managing certificates within a Public Key Infrastructure (PKI). Here are some of the key objects and file formats you might encounter:
+
+.PFX (Personal Information Exchange) Files: These files are used to store a certificate and its private and public keys in a single encrypted file. PFX files are commonly used for transporting and importing/exporting certificates and private keys across different systems. They support password protection, which adds a layer of security when transferring sensitive information.
+
+.CER/.CRT (Certificate) Files: These files contain a digital certificate that is used by various types of software to prove the identity of the certificate holder and to ensure that the public key contained in the certificate can be trusted. .CER and .CRT are often used interchangeably and can be in different formats such as binary DER form or ASCII PEM form.
+
+.CSR (Certificate Signing Request) Files: This is a block of encoded text that is given to a Certificate Authority when applying for a digital certificate. It contains information that will be included in your certificate such as your organization name, common name (domain name), locality, and country. It also contains the public key that will be included in the certificate. A private key pairs with the submitted public key is created during the CSR generation process.
+
+.KEY Files: These files usually contain a private key, separate from the certificate. The private key is a crucial part of the PKI and SSL security. It is used to decrypt information encrypted with the public key.
+
+.CCACHE (Credential Cache) Files: While not directly a part of AD CS, .ccache files are related to the broader context of secure communication in networks. They are used by Kerberos authentication systems to temporarily store a user's credentials. In environments where AD CS is part of a broader security framework that includes Kerberos, you might encounter these files.
+
+
+There are 4 broad categories of ADCS attacks.
+
+1) Certificate Templates
+2) CA Configuration
+3) Access Control
+4) NTLM Relay Attacks
+
 
 Enumerate Certificate Services.
 
 ### Certipy
+
+Linux tool based on certify. 
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b15d4c16-febf-4eb7-84c6-b421259763c7)
 
