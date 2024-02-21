@@ -207,6 +207,10 @@ could also use pth and evil-winrm
 
 ### Coercer
 
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/e83c59f1-6482-4684-a67c-818ed0c85332)
+
+Running this will yield the pfx in certipy.
+
 ### NETEXEC
 
 `https://github.com/Pennyw0rth/NetExec`
