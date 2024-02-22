@@ -144,9 +144,9 @@ Active Directory Certificate Services.
 
 Active Directory Certificate Services (AD CS) is a Microsoft Windows server role that allows you to build a public key infrastructure (PKI) and provide digital certificate management services. These services include issuing, validating, and revoking public key certificates, which are essential for enabling secure communications and transactions over networks. AD CS can be used to enhance security by providing a framework for encrypted data exchange, digital signatures, secure email, and web authentication.
 
-Key Concepts in ADCS
+### Key Concepts in ADCS
 
-Certificate Templates: These are pre-set configurations determining the characteristics and intended use of certificates distributed by AD CS. They include parameters like the certificate's purpose, the size of its key, its duration of validity, and the policies governing its issuance. AD CS provides a range of default templates (for instance, for Web Servers or Code Signing) and also allows administrators to create bespoke templates to meet specific organizational needs.
+**Certificate Templates**: These are pre-set configurations determining the characteristics and intended use of certificates distributed by AD CS. They include parameters like the certificate's purpose, the size of its key, its duration of validity, and the policies governing its issuance. AD CS provides a range of default templates (for instance, for Web Servers or Code Signing) and also allows administrators to create bespoke templates to meet specific organizational needs.
 
 Public Key Infrastructure (PKI): This is an extensive framework that combines technology, processes, policies, and standards to facilitate the issuance, management, distribution, and revocation of digital certificates. It includes Certification Authorities (CAs) and registration authorities that verify the identities of entities engaged in electronic communications through public key encryption.
 
@@ -159,7 +159,7 @@ Certificate Manager: This role entails overseeing the issuance and management of
 Digital Certificate: This is an electronic credential that contains identity information (such as names of individuals or organizations) and a matching public key. Digital certificates are used for authentication, verifying the identity of a person or device.
 
 
-Important Items in ADCS
+### Important Items in ADCS
 
 Active Directory Certificate Services (AD CS) interacts with various file formats and objects as part of its operations in managing certificates within a Public Key Infrastructure (PKI). Here are some of the key objects and file formats you might encounter:
 
