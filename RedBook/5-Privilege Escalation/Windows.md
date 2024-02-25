@@ -145,6 +145,8 @@ Active Directory Certificate Services (AD CS) is a Microsoft Windows server role
 
 https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/active-directory-certificate-services-overview
 
+https://posts.specterops.io/certified-pre-owned-d95910965cd2
+
 ### Key Concepts in ADCS
 
 `Certificate Templates`: These are pre-set configurations determining the characteristics and intended use of certificates distributed by AD CS. They include parameters like the certificate's purpose, the size of its key, its duration of validity, and the policies governing its issuance. AD CS provides a range of default templates (for instance, for Web Servers or Code Signing) and also allows administrators to create bespoke templates to meet specific organizational needs.
@@ -215,6 +217,16 @@ Running this will yield the pfx in certipy.
 ### NETEXEC
 
 `https://github.com/Pennyw0rth/NetExec`
+
+### NTLMrelayx
+
+### petitpotam
+
+### klist 
+
+### certutil
+
+### What does this all look like with wireshark?
 
 ### Certify
 
