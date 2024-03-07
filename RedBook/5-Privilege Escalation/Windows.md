@@ -136,6 +136,14 @@ Snaffler is a tool that can help us acquire credentials or other sensitive data 
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/96179d5a-2b09-4149-8540-927ba2e13e9c)
 
+## ADRecon
+
+ADRecon is a tool which extracts and combines various artefacts out of an AD environment. 
+
+`https://github.com/sense-of-security/ADRecon`
+
+![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/97023c3a-f2b8-491f-9037-004d7794dd4f)
+
 
 ## ADCS
 
