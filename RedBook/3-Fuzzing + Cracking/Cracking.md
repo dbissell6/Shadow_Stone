@@ -79,18 +79,28 @@ locate *2john*
 
 ## unshadow
 
+
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/421d991d-7dc5-462d-a0d9-c4a1ccbdd423)
 
 combine passwd and shadow
+
+![image](https://github.com/user-attachments/assets/b01c2d24-ead3-4545-be7f-4c5a66aaa21c)
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/9f73ca71-245a-411c-be8a-ff47cce9e9c0)
 
 crack
 
+
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/62768891-ffc2-4c88-9c88-ad34064af7ea)
 
+If hashed with yescrypt need
+
+```
+john --wordlist=passwords.txt --format=crypt vivi_hash.txt
+```
 
 ## zip password
+
 ![Pasted image 20220805161528](https://github.com/dbissell6/Shadow_Stone/assets/50979196/eeed6c7b-2722-4d0c-aa1b-82c38390554a)
 
 ![Pasted image 20220805161535](https://github.com/dbissell6/Shadow_Stone/assets/50979196/b48c3d5b-1cdc-41df-9346-302b54ba2d71)
