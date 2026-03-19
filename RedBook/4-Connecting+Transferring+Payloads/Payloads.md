@@ -112,6 +112,12 @@ Now can
 ```
 set payload windows/x64/meterpreter/reverse_tcp
 ```
+
+Can use bg to go back to options, `sessions` to check open sessions and `sessions -i x` to go back to it
+
+
+
+
 # Sliver
 
 ![image](https://github.com/dbissell6/Shadow_Stone/assets/50979196/47d173f7-f725-4f09-a7d5-407fd6d67398)
