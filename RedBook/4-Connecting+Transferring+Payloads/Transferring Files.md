@@ -12,6 +12,11 @@
 wget -r -np http://10.10.14.98
 ```
 
+
+## Using RDP
+
+`xfreerdp3 /u:LetsDefend /p:'' /v:3.135.210.199 /drive:share,/home/kali/CTFs/LetsDefend`
+
 ## From Attack to Windows
 
 
